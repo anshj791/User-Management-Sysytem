@@ -11,7 +11,7 @@ export const columns: ColumnDef<User>[] = [
     enableSorting: false,
     enableHiding: false,
     header: '',
-    cell: () => <input type="checkbox" className="w-4 h-4 rounded border-gray-300" />,
+    cell: () => <input type="checkbox" className="w-4 h-4 rounded border-gray-300 dark:border-gray-600" />,
   },
   {
     accessorKey: 'name',
@@ -19,7 +19,7 @@ export const columns: ColumnDef<User>[] = [
       return (
         <Button
           variant="ghost"
-          className="pl-0 font-medium text-gray-900"
+          className="pl-0 font-medium"
           onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
         >
           Name
@@ -28,7 +28,7 @@ export const columns: ColumnDef<User>[] = [
       );
     },
     cell: ({ row }) => (
-      <span className="text-gray-900 font-medium">
+      <span className="font-medium">
         {row.getValue('name')}
       </span>
     ),
@@ -37,7 +37,7 @@ export const columns: ColumnDef<User>[] = [
     accessorKey: 'email',
     header: 'Email',
     cell: ({ row }) => (
-      <span className="text-gray-600">
+      <span className="text-muted-foreground">
         {row.getValue('email')}
       </span>
     ),
@@ -46,7 +46,7 @@ export const columns: ColumnDef<User>[] = [
     accessorKey: 'phone',
     header: 'Phone',
     cell: ({ row }) => (
-      <span className="text-gray-600">
+      <span className="text-muted-foreground">
         {row.getValue('phone')}
       </span>
     ),
@@ -55,7 +55,7 @@ export const columns: ColumnDef<User>[] = [
     accessorKey: 'website',
     header: 'Website',
     cell: ({ row }) => (
-      <span className="text-gray-600">
+      <span className="text-muted-foreground">
         {row.getValue('website')}
       </span>
     ),
@@ -64,7 +64,7 @@ export const columns: ColumnDef<User>[] = [
     accessorKey: 'company.name',
     header: 'Company',
     cell: ({ row }) => (
-      <span className="text-gray-600">
+      <span className="text-muted-foreground">
         {row.original.company.name}
       </span>
     ),
@@ -73,7 +73,7 @@ export const columns: ColumnDef<User>[] = [
     accessorKey: 'lastSeen',
     header: 'Last Seen',
     cell: () => (
-      <span className="text-gray-600">2 hours ago</span>
+      <span className="text-muted-foreground">2 hours ago</span>
     ),
   },
   {
@@ -82,7 +82,7 @@ export const columns: ColumnDef<User>[] = [
     cell: () => (
       <div className="flex items-center gap-2">
         <Check className="h-4 w-4 text-green-500" />
-        <span className="text-green-700 font-medium">Approved</span>
+        <span className="text-green-700 dark:text-green-400 font-medium">Approved</span>
       </div>
     ),
   },
