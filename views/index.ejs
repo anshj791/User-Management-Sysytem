@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Records</title>
+    <style>
+        /* Add Student button styles */
+.add-button {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.add-button:hover {
+    background-color: #45a049;
+}
+
+        /* Reset default margin and padding for all elements */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+
+        /* Header styles */
+        h1 {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px 0;
+            margin-bottom: 20px;
+        }
+
+        /* Link styles */
+        a {
+            text-decoration: none;
+            color: #4CAF50;
+            margin: 10px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Student list table styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        /* Edit and Delete links styles */
+        a.edit, a.delete {
+            text-decoration: none;
+            color: #4CAF50;
+            margin-left: 10px;
+        }
+
+        a.edit:hover, a.delete:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Student Records</h1>
+    <a href="/add" class="add-button">Add Student</a>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% students.forEach(function(student) { %>
+                <tr>
+                    <td><%= student.name %></td>
+                    <td><%= student.age %></td>
+                    <td><%= student.email %></td>
+                    <td>
+                        <a href="/edit/<%= student.name %>" class="edit">Edit</a>
+                        <a href="/delete/<%= student.name %>" class="delete">Delete</a>
+                    </td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</body>
+</html>

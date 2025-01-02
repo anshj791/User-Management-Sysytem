@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Student</title>
+</head>
+<body>
+    <h1>Delete Student</h1>
+    <p>Are you sure you want to delete <%= student.name %>? This action cannot be undone.</p>
+    <form method="POST" action="/delete/<%= student.name %>">
+        <button type="submit">Delete Student</button>
+    </form>
+    <a href="/">Cancel</a>
+</body>
+</html>
